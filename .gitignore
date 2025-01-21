@@ -1,0 +1,10 @@
+# Ignore environment variables
+Client/.env
+Server/.env
+
+# Ignore node_modules directories
+Client/node_modules/
+Server/node_modules/
+
+# Ignore other unnecessary files
+.DS_Store

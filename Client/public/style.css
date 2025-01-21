@@ -1,0 +1,106 @@
+/* Body Background and General Font */
+body {
+  background: linear-gradient(to bottom, #87CEEB, #FFFFFF); /* Sky blue to white gradient */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main Title */
+h1 {
+  text-align: center;
+  color: black;
+  font-size: 36px;
+  margin: 20px 0;
+  text-transform: uppercase;
+  border-bottom: 2px solid #87CEEB; /* Sky blue underline */
+  padding-bottom: 10px;
+}
+
+/* Section Containers */
+#mailboxes, #inbox, #composeForm {
+  background-color: #f9f9f9; /* Light background */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* Mailbox List */
+#mailboxes {
+  list-style-type: none;
+  padding: 0;
+}
+
+#mailboxes li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#mailboxes li:hover {
+  background-color: #f1f1f1; /* Light gray hover effect */
+}
+
+/* Input Fields and Textarea */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input:focus, textarea:focus {
+  border-color: #87CEEB; /* Sky blue on focus */
+  outline: none;
+  box-shadow: 0 0 5px #87CEEB;
+}
+
+/* Buttons */
+button {
+  background-color: #28a745; /* Green */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+/* Inbox Messages */
+#inbox {
+  list-style-type: none;
+  padding: 0;
+}
+
+#inbox li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  color: black;
+  transition: background-color 0.3s ease;
+}
+
+#inbox li:hover {
+  background-color: #f1f1f1; /* Light gray hover effect */
+}
+
+/* Form Heading */
+#composeForm h2 {
+  color: black;
+  margin-bottom: 15px;
+  font-size: 24px;
+  text-align: left;
+}
+
+  
