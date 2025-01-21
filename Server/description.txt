@@ -1,0 +1,70 @@
+Environment Description:
+
+1. Node.js Version:
+   - v22.11.0
+
+2. NPM Version:
+   - 10.9.0
+
+3. Operating System:
+   - macOS Ventura (Version 13.6.9)
+
+4. Browser Used:
+   - Safari and Chrome
+
+5. Computer Architecture:
+   - x86_64
+
+Testing Procedure:
+
+To verify the functionality of my webmail system, I would perform the following steps:
+
+1. Start the Server:
+   - Run the command `node app.js` in the terminal. This will start the server at `http://localhost:4000`.
+
+2. Test Sending an Email (/send-email Route):
+   - Use Postman to send a POST request to `http://localhost:4000/send-email` with the following JSON   	payload:
+
+{ "to": "recipient@gmail.com", "subject": "Test Email", "text": "This is a test email." }
+
+   - Verify that the server sends the email and returns a success message confirming delivery.
+
+3. Test Listing Mailboxes (/mailboxes Route):
+	- Send a GET request to `http://localhost:4000/mailboxes`.
+	- The response should contain a list of mailboxes, such as `["INBOX", "Sent"]`.
+
+4. Test Listing Messages in a Mailbox (/mailboxes/:mailbox Route):
+	- Send a GET request to `http://localhost:4000/mailboxes/INBOX` (or replace `INBOX` with 	another mailbox like `Sent`).
+	- The response should display the last 10 messages in the specified mailbox.
+
+5. Test Retrieving a Specific Message (/messages/:mailbox/:id Route):
+	- Send a GET request to `http://localhost:4000/messages/INBOX/155789`, replacing `155789` 	with a valid message ID.
+	- Confirm that the server returns the decoded message body, regardless of encoding (e.g., 	quoted-printable or base64).
+
+6. Test Deleting a Message (/messages/:mailbox/:id/delete Route):
+	- Send a DELETE request to `http://localhost:4000/messages/INBOX/155789/delete`.
+	- Ensure the specified message is deleted and a success confirmation is returned.
+
+How REST Helps the Web Application:
+
+REST (Representational State Transfer) is an architectural style that leverages stateless communication and standard HTTP methods to manage resources. Here’s how it benefits the webmail system:
+
+1. Stateless Communication:
+	- Each client request contains all the information the server needs to process it. This 	eliminates the need for server-side session storage, improving scalability and efficiency.
+
+2. Resource-Oriented Design:
+	- Resources are identified using URIs. For instance, `/mailboxes` refers to the mailbox list, 	while `/messages/:id` refers to a specific email message.
+	- This structure ensures clear and straightforward interactions with resources through 		standard HTTP methods.
+
+3. Use of HTTP Methods:
+   - RESTful systems utilize predictable HTTP methods:
+  	- GET: Retrieve data (e.g., fetching messages or mailboxes).
+  	- POST: Create resources (e.g., sending an email).
+  	- DELETE: Remove resources (e.g., deleting an email).
+   - These methods ensure a consistent and uniform approach to resource management.
+
+4. Modular and Scalable:
+    - Since requests are independent (stateless), new features or resources can be added without           	disrupting existing functionality. This modularity simplifies scaling and future development.
+
+By adopting REST, the webmail system is designed to be efficient, scalable, and easy to use, following best practices for web API development. It ensures compatibility with various clients and supports future expansion.
+
