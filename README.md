@@ -91,7 +91,6 @@ WebmailSystem/
 
 ## Notes
 
-- The `.env` file containing sensitive information is excluded from the repository using `.gitignore`.
 - This project demonstrates core web programming concepts like **AJAX**, **REST APIs**, **SMTP**, and **IMAP**.
 
 ---
